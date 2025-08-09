@@ -8,11 +8,14 @@ Este repositório contém exemplos básicos de consumer e producer para RabbitMQ
 rabbitMQ/
 ├── docker-compose.yml          # RabbitMQ para produção
 ├── docker-compose.dev.yml      # RabbitMQ para desenvolvimento
-├── rabbitmq.sh                 # Script de gerenciamento
 ├── python/                     # Implementação em Python
-│   ├── basic.py                # Consumer Python
-│   ├── producer.py             # Producer Python
-│   ├── requirements.txt        # Dependências Python
+│   ├── basic/                    # Implementação básica
+│   |   ├── producer.py         # Producer 
+│   │   └── consumer.py         # Consumer
+│   ├── dlq/                     # Implementação com Dead Letter Queue
+│   │   ├── producer.py         # Producer DLQ
+│   │   ├── consumer.py         # Consumer DLQ
+│   │   └── dlq_consumer.py     # Configuração do DLQ
 │   └── README.md              # Documentação Python
 ├── node/                       # Implementação em Node.js
 │   ├── basic.js               # Consumer Node.js
@@ -41,18 +44,6 @@ rabbitMQ/
    - Usuário: `guest`
    - Senha: `guest`
 
-### Comandos Disponíveis
-
-```bash
-./rabbitmq.sh start-dev    # Inicia em modo desenvolvimento
-./rabbitmq.sh start        # Inicia em modo produção
-./rabbitmq.sh stop         # Para o RabbitMQ
-./rabbitmq.sh restart      # Reinicia o RabbitMQ
-./rabbitmq.sh logs         # Mostra os logs
-./rabbitmq.sh status       # Verifica o status
-./rabbitmq.sh clean        # Remove tudo (containers, volumes, etc)
-./rabbitmq.sh help         # Mostra ajuda
-```
 
 ### Credenciais
 
